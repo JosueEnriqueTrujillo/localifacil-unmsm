@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --color-guinda: #7D1119;
+  --color-guinda-hover: #5E0C12;
+  --color-guinda-dark: #4A090E;
+  --color-dorado: #D4A237;
+  --color-dorado-hover: #B88928;
+  --color-marino: #16263E;
+  --color-fondo: #FAFAFA;
+  --color-borde: #E5E7EB;
+}
+
+html {
+  scroll-behavior: smooth;
+}
