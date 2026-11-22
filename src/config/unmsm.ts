@@ -19,6 +19,9 @@ export const YAPE_CONFIG = {
   qrImage: '/yape-qr.png',
 } as const;
 
+export const SUPPORT_WHATSAPP_URL =
+  'https://wa.me/51935692034?text=Hola%20Fabio,%20tengo%20una%20consulta%20sobre%20Localif%C3%A1cil%20UNMSM';
+
 export const INSTITUTIONAL_SEAL =
   'Comunidad Universitaria UNMSM - Ciudad Universitaria';
 

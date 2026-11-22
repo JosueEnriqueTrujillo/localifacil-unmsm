@@ -149,9 +149,17 @@ export async function fetchAdminList(
 export async function approvePayment(
   payload: ApprovePaymentPayload
 ): Promise<ApprovePaymentResponse> {
+  const cleanId = String(payload.idLlavero ?? '').trim();
+  const cleanOrigin =
+    payload.frontendUrl ?? window.location.origin.replace(/\/+$/, '');
+  const scanUrl =
+    payload.scanUrl ?? `${cleanOrigin}/?id=${encodeURIComponent(cleanId)}`;
+
   return postToAppsScript<ApprovePaymentPayload, ApprovePaymentResponse>({
     action: 'APPROVE_PAYMENT',
     pin: String(payload.pin ?? '').trim(),
-    idLlavero: String(payload.idLlavero ?? '').trim(),
+    idLlavero: cleanId,
+    frontendUrl: cleanOrigin,
+    scanUrl,
   });
 }

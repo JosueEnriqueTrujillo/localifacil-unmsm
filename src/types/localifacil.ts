@@ -5,6 +5,9 @@ export interface QrStatusResponse {
   id: string;
   facultad?: string;
   ownerFirstName?: string;
+  telefono?: string | number;
+  callUrl?: string;
+  whatsappUrl?: string;
   message?: string;
 }
 
@@ -81,6 +84,8 @@ export interface ApprovePaymentPayload {
   action: 'APPROVE_PAYMENT';
   pin: string;
   idLlavero: string;
+  frontendUrl?: string;
+  scanUrl?: string;
 }
 
 export interface ApprovePaymentResponse {

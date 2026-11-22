@@ -3,6 +3,7 @@ import { AlertTriangle, ArrowLeft, RefreshCw } from 'lucide-vue-next';
 import { onMounted, ref } from 'vue';
 import AppFooter from './components/AppFooter.vue';
 import AppHeader from './components/AppHeader.vue';
+import SupportWhatsAppButton from './components/SupportWhatsAppButton.vue';
 import ToastContainer from './components/ToastContainer.vue';
 import { useToast } from './composables/useToast';
 import { checkQrStatus } from './services/api';
@@ -172,6 +173,7 @@ onMounted(() => {
     </main>
 
     <AppFooter />
+    <SupportWhatsAppButton />
     <ToastContainer />
   </div>
 </template>

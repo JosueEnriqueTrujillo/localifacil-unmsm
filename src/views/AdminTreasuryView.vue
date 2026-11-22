@@ -128,10 +128,15 @@ const handleApprove = async (item: AdminRegistrationItem) => {
   approvingId.value = item.idLlavero;
   approvalAlert.value = '';
   try {
+    const cleanOrigin = window.location.origin.replace(/\/+$/, '');
+    const scanUrl = `${cleanOrigin}/?id=${encodeURIComponent(item.idLlavero)}`;
+
     await approvePayment({
       action: 'APPROVE_PAYMENT',
       pin: activePin.value,
       idLlavero: item.idLlavero,
+      frontendUrl: cleanOrigin,
+      scanUrl,
     });
 
     await loadRecords(activePin.value);

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { Lock, MapPin, ShieldCheck } from 'lucide-vue-next';
-import { INSTITUTIONAL_SEAL } from '../config/unmsm';
+import { Lock, MapPin, MessageCircle, ShieldCheck } from 'lucide-vue-next';
+import { INSTITUTIONAL_SEAL, SUPPORT_WHATSAPP_URL, YAPE_CONFIG } from '../config/unmsm';
 import BrandLogo from './BrandLogo.vue';
 
 const currentYear = new Date().getFullYear();
@@ -33,6 +33,28 @@ const currentYear = new Date().getFullYear();
             <span>Correo electrónico (@gmail.com o @unmsm.edu.pe) donde recibirás tu QR, boleta y alertas GPS</span>
           </span>
         </div>
+      </div>
+
+      <!-- Apartado Soporte y Pagos Yape (Fabio Acólito) -->
+      <div
+        class="mt-6 flex flex-col items-start justify-between gap-3 rounded-xl border border-emerald-200 bg-emerald-50/70 px-4 py-3 sm:flex-row sm:items-center"
+      >
+        <div class="text-xs text-[#16263E]">
+          <p class="font-bold">Soporte y Pagos Yape ({{ YAPE_CONFIG.holder }})</p>
+          <p class="text-slate-600">
+            ¿Dudas con tu registro, validación de Yape o entrega de llavero? Escríbenos al +51 {{ YAPE_CONFIG.phone }}.
+          </p>
+        </div>
+
+        <a
+          :href="SUPPORT_WHATSAPP_URL"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex shrink-0 items-center gap-2 rounded-lg bg-emerald-600 px-3.5 py-2 text-xs font-bold text-white shadow-xs transition-colors hover:bg-emerald-700"
+        >
+          <MessageCircle class="h-4 w-4" />
+          <span>WhatsApp Soporte (+51 {{ YAPE_CONFIG.phone }})</span>
+        </a>
       </div>
 
       <div
