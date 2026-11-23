@@ -783,13 +783,13 @@ const handleSubmit = async () => {
                 class="flex flex-col items-center rounded-xl border border-[#E5E7EB] bg-white p-4 text-center md:col-span-5"
               >
                 <div
-                  class="flex h-36 w-36 items-center justify-center overflow-hidden rounded-xl border border-[#E5E7EB] bg-[#FAFAFA]"
+                  class="flex h-52 w-40 items-center justify-center overflow-hidden rounded-xl border border-[#E5E7EB] bg-[#742384]"
                 >
                   <img
                     v-if="!yapeQrFailed"
                     :src="YAPE_CONFIG.qrImage"
-                    alt="Código QR Yape Localifácil UNMSM"
-                    class="h-full w-full object-contain p-1"
+                    alt="Código QR Yape Fabio Cieza - Localifácil UNMSM"
+                    class="h-full w-full object-contain"
                     @error="yapeQrFailed = true"
                   />
                   <div

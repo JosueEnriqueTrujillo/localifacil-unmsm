@@ -15,8 +15,8 @@ export const APPS_SCRIPT_URL: string =
 
 export const YAPE_CONFIG = {
   phone: '935 692 034',
-  holder: 'Fabio Acólito',
-  qrImage: '/yape-qr.png',
+  holder: 'Fabio Cieza',
+  qrImage: '/yape-qr.jpg',
 } as const;
 
 export const SUPPORT_WHATSAPP_URL =

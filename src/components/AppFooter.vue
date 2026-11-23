@@ -35,7 +35,7 @@ const currentYear = new Date().getFullYear();
         </div>
       </div>
 
-      <!-- Apartado Soporte y Pagos Yape (Fabio Acólito) -->
+      <!-- Apartado Soporte y Pagos Yape (Fabio Cieza) -->
       <div
         class="mt-6 flex flex-col items-start justify-between gap-3 rounded-xl border border-emerald-200 bg-emerald-50/70 px-4 py-3 sm:flex-row sm:items-center"
       >
