@@ -46,6 +46,7 @@ const { success, error: showError, info } = useToast();
 
 const formSectionRef = ref<HTMLElement | null>(null);
 const plansSectionRef = ref<HTMLElement | null>(null);
+const paymentProofInputRef = ref<HTMLInputElement | null>(null);
 const yapeQrFailed = ref(false);
 
 const selectedPlan = ref<PlanOption>(PLANS[1] ?? PLANS[0]!);
@@ -191,6 +192,27 @@ const markAllTouched = () => {
   touched.paymentProof = true;
 };
 
+const resetForm = () => {
+  form.fullName = '';
+  form.studentCode = '';
+  form.email = '';
+  form.phone = '';
+  form.facultad = '';
+
+  touched.fullName = false;
+  touched.studentCode = false;
+  touched.email = false;
+  touched.phone = false;
+  touched.facultad = false;
+  touched.paymentProof = false;
+
+  paymentProofBase64.value = '';
+  paymentProofName.value = '';
+  if (paymentProofInputRef.value) {
+    paymentProofInputRef.value.value = '';
+  }
+};
+
 const handleSubmit = async () => {
   markAllTouched();
 
@@ -226,6 +248,8 @@ const handleSubmit = async () => {
     modalState.facultad = form.facultad;
     modalState.email = correo;
     modalState.open = true;
+
+    resetForm();
 
     success(
       'Solicitud enviada',
@@ -397,7 +421,7 @@ const handleSubmit = async () => {
           Elige tu protección Localifácil
         </h2>
         <p class="mx-auto mt-2 max-w-xl text-sm text-slate-600">
-          Pago único sin mensualidades. Incluye llavero acrílico físico con QR
+          Pago semestral sin mensualidades adicionales. Incluye llavero acrílico físico con QR
           grabado y credencial digital descargable al instante.
         </p>
       </div>
@@ -439,7 +463,7 @@ const handleSubmit = async () => {
             <span class="text-3xl font-extrabold text-[#7D1119]">
               {{ plan.formattedPrice }}
             </span>
-            <span class="text-xs font-medium text-slate-500">pago único</span>
+            <span class="text-xs font-medium text-slate-500">pago semestral</span>
           </div>
           <p class="mt-2 text-sm text-slate-600">{{ plan.description }}</p>
 
@@ -853,6 +877,7 @@ const handleSubmit = async () => {
 
                   <input
                     id="paymentProof"
+                    ref="paymentProofInputRef"
                     type="file"
                     accept="image/*"
                     class="sr-only"
